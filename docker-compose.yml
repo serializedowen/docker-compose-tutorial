@@ -1,0 +1,20 @@
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - '3312:3306'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+
+
+  webapp:
+    build: .
+    container_name: webapp
+    restart: always
+    depends_on: 
+      - "mysql"
+    environment:
+      NODE_ENV: "production"
+    ports:
+      - '80:8080'
