@@ -2,7 +2,7 @@ services:
   mysql:
     image: mysql:latest
     ports:
-      - '3312:3306'
+      - '3306:3306'
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "123456"
